@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+        <title>zingfake</title>
+    </head>
+<script>
+    $(document).ready(function(){
+        $('.slider').slick({
+        dots: true,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 5,
+        slidesToScroll: 5,
+        prevArrow:'<span class="priv_arrow arrow"><i class="fa fa-angle-left left"></i></i></span>',
+        nextArrow:'<span class="priv_next arrow"><i class="fa fa-angle-right right"></i></i></span>',
+        responsive: [
+            {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true,
+                dots: true
+            }
+            },
+            {
+            breakpoint: 576,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+            },
+            // {
+            // breakpoint: 680,
+            // settings: {
+            //     slidesToShow: 1,
+            //     slidesToScroll: 1
+            // }
+            // }
+        ]
+        });
+            })
+</script>
+<script>
+    $(document).ready(function(){
+    $('.slider1').slick({
+    dots: true,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    prevArrow:'<span class="priv_arrow1 arrow1"><i class="fa fa-angle-left left"></i></i></span>',
+    nextArrow:'<span class="priv_next1 arrow1"><i class="fa fa-angle-right right"></i></i></span>',
+    responsive: [
+        {
+        breakpoint: 992,
+        settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true
+        }
+        },
+        {
+        breakpoint: 650,
+        settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+        }
+        },
+        // {
+        // breakpoint: 680,
+        // settings: {
+        //     slidesToShow: 1,
+        //     slidesToScroll: 1
+        // }
+        // }
+    ]
+    });
+        })
+</script>
+<style>
+    *{margin: 0;padding: 0;box-sizing: border-box;font-family: Arial, Helvetica, sans-serif;}
+
+    .header-menu{
+        display: flex;
+        justify-content: space-between;  
+        align-items: center;
+        /* top:0; */
+        /* left: 5%; */
+        margin-left: 60px;
+        width: 90%;
+        height: 60px;
+        background: lavender;
+        position: fixed;
+        z-index: 10;
+    }
+    .header{
+        width: 100%;
+        z-index: 10;
+        left: 0;
+        border-bottom:1px solid lightgray ;
+    }
+    .header-menu img{
+        width: 100%;
+        height: 100%;
+    }
+    .header-logo{
+        margin-left: 20px;
+        width: 100px;
+        height: 40px;
+    }
+    .nav{
+        display: flex;
+        list-style: none;
+        margin-left: -25px;
+    }
+    .nav a{
+        text-decoration: none;
+        display: block;
+        padding: 2px 5px;
+        font-size: 90%;
+        font-weight: 600;
+        color: rgb(48, 45, 45);
+        border-bottom: 3px solid transparent;
+        line-height: 55px;
+    }
+    .nav a:hover{
+        color: #3399cc;
+        border-bottom: 3px solid #3399cc;
+    }
+    .header-icon{
+        display: flex;  
+        cursor: pointer;
+        margin-right: 4%;
+        justify-content: space-between;
+        width: 50px;
+        position: relative;
+    }
+    .text{
+        position: absolute;
+        top:-55%;
+        left: -300%;
+        font-size: 16px;
+        background: #444444;
+        color: #D7D7D7;
+        padding: 10px 10px;
+        border-radius: 5px;
+        width: 220px;
+        opacity: 0;
+        visibility: hidden;
+        border: none;
+        transition: 0.4s;
+        outline: none;
+    }
+    .addtext{
+        left: -390%;
+        opacity: 1;
+        visibility: visible;
+    }
+    .search{
+        color:red;
+        font-size: 18px;
+        z-index: 3;
+        position: absolute;
+    }
+    .toggle{
+        margin-left: -20px;
+        position: relative;
+        width:30px;
+        height:30px;
+        background: white;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 1s;
+    }
+    .toggle::before{
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 3px;
+        background: black;
+        transform: translateY(-7px);
+        box-shadow: 0 7px 0px black;
+        transition: 0.3s;
+    }
+    .toggle.active::before{
+        transform: translateY(0px) rotate(45deg);
+        box-shadow: 0 0 0 #fff;
+    }
+    .toggle::after{
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 3px;
+        background: black;
+        transform: translateY(7px);
+        transition: 0.3s;
+    }
+    .toggle.active::after{
+        transform: translateY(0px) rotate(-45deg);
+    }
+    @media (max-width:1279px) {
+        .header-menu{
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+    @media (max-width:1140px){
+        .header-menu{
+            width: 90%;
+            margin-left: 50px;
+        }
+        .header-menu ul{
+            display: none;
+        }
+        .toggle{
+            order:1;
+            margin-left: 40px;
+        }
+        .header-logo{
+            order: 2;
+        }
+        .header-icon{
+            order: 3;
+        }
+    }
+    .menu-list{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #141329;
+        color: #fff;
+        padding-left: 25px;
+        transition: 0.4s;
+        top:60px;
+        z-index: 100;
+        padding-top: 10px;
+        opacity: 0;
+        visibility: hidden;
+        }
+        .row1{
+            display: flex;
+        }
+        .row1 ul{
+            width: 100%;
+        }
+        .row1 li{
+            list-style: none;
+        }
+        .row1 a{
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .row1 h4{
+            font-size: 20px;
+        }
+        h4::before{
+        content: '';
+        display: inline-block;
+        width: 4px;
+        height: 12px;
+        margin-right: 5px;
+        transform: skew(-20deg);
+        background-color: #dd3333;
+    }
+    .addList{
+        opacity: 1;
+        visibility: visible;
+    }
+        @media (max-width:768px) {
+            .row1 a{
+                display: none;
+            }
+            .row1 h4{
+                font-size: 16px;
+            }
+        }
+    .sec1{
+        margin-top: 70px;
+    }
+    .a{
+        width: 100%;
+        height: 600px;
+    }
+    .b{
+        width: 100%;
+        height: 600px;
+    }
+    .c{ 
+        width: 100%;
+        height: 200px;
+    }
+    .d{
+        width: 100%;
+        height: 60%;
+        background: blue;
+    }
+    .e{
+        width: 100%;
+        height: 100%;
+        /* background: lawngreen; */
+    }
+    .f{
+        width: 100%;
+        height: 200px;
+        /* background: lavender; */
+    }
+    .q{
+        width: 50%;
+        height: 200px;
+        /* background: black; */
+        margin-bottom: 75px;
+    }
+    .w{
+        width: 50%;
+        height: 200px;
+        /* background: lavender; */
+    }
+    .t{
+        width: 50%;
+        height: 200px;
+        /* background: red; */
+    }
+    .r{
+        width: 50%;
+        height: 200px;
+        /* background: yellow; */
+    }
+        ul{
+            list-style: none;
+        }
+        button{
+            display: none;
+        }
+        .slider{
+            width: 90%;
+            margin: 20px auto;
+            padding-left: 20px;
+            position: relative;
+        }
+        .arrow{
+            border: 1px solid grey;
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%; 
+            position: absolute;
+            top:40%;
+            z-index: 1;
+            text-align: center;
+            line-height: 40px;
+            font-size: 18px;
+        }
+        .priv_arrow{
+            left: 0%;
+        }
+        .priv_next{
+            right: 0%;
+        }
+        .item{
+            margin-right: 20px;
+            height: 250px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .slider img{
+            width: 100%;
+            height: 60%;
+            margin-bottom: 10px;
+        }
+        .slider p{
+            font-weight: 600;
+            font-size: 15px;
+            padding: 0 10px ;
+        }
+        .section2-menu{
+            display: flex;
+            width: 100%;
+            height: 70px;
+            background-color: #ffde76;
+        }
+        .section2-menu ul{
+            display: flex;
+            align-items: center;
+            margin-bottom: 0;
+        }
+        .section2-menu a{
+            text-decoration: none;
+            display: block;
+            padding: 3px 6px;
+            line-height: 70px;
+        }
+        .section2-menu h3{
+            line-height: 70px;
+            font-size: 22px;
+            margin-left: 20px;
+        }
+        .section2-menu h3::before{
+        content: '';
+        display: inline-block;
+        width: 4px;
+        height: 16px;
+        margin-right: 5px;
+        transform: skew(-20deg);
+        background-color: #dd3333;
+    }
+    .section2-news{
+        background-color: #ffde76;
+        margin: 0;
+        height: 580px;
+        padding: 0 15px;
+    }
+    .section2-news-left img{
+        width: 100%;
+        height: 430px;
+        object-fit: cover;
+    }
+    .section2-news-left h3{
+        font-size: 22px;
+        margin-top: 15px;
+    }
+    .small img{
+        width: 100%;
+        height: 100%;
+    }
+    .small h3{
+        font-size: 16px;
+    }
+    .news-right{
+        padding: 0;
+    }
+    .col2 img{
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+    }
+    .col2 h1{
+        font-size: 30px;
+        padding: 10px 0;
+    }
+    .col2 p{
+        font-size: 16px;
+    }
+    .col2 ul{
+        list-style: outside;
+        font-size: 14px;
+    }
+    .col1 img{
+        height: 90px;
+    }
+    .col1 ul{
+        padding: 0;
+    }
+    .col1 a{
+        text-decoration: none;
+        display: block;
+        padding-left: 10px;
+        font-size: 15px;
+    }
+    .col1 li{
+        display: flex;
+        margin-bottom: 30px;
+        border-top: 1px solid lightgrey;
+    }
+    .col3 img{
+        width: 100%;
+        height: 100%;
+    }
+    .col3 ul{
+        padding: 0;
+    }
+    .col3 a{
+        text-decoration: none;
+        display: block;
+        padding: 10px 0;
+    }
+    .list-left{
+            height: 800px;
+        }
+        .list-left ul{
+            padding: 0;
+        }
+        .list-left li{
+            display: flex;
+            height: 200px;
+            border-top: 1px solid lightgray;
+        }
+        .list-left img{
+            width: 300px;
+            height: 180px;
+        }
+        .list-left .inf{
+            width: 500px;
+            padding-left: 15px;
+        }
+        .list-left a{
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 600;
+            color: rgb(41, 39, 39);
+        }
+        .list-left p{
+            font-size: 14px;
+        }
+        .list-right img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1);
+            transition: 1s;
+        }
+        .list-right h3{
+            font-size: 20px;
+            padding: 10px 0;
+        }
+        .list-right .inf-seagame{
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        .list-right .inf-seagame .hinhanh{
+            overflow: hidden;
+        }
+        .list-right img:hover {
+            transform: scale(1.5);
+        }
+        @media (max-width:992px) {
+            .list-right{
+                display: none;
+            }
+            .list-left{
+                width: 100%;
+            }
+            .list-left .inf{
+                width: 400px;
+            }
+        }
+        @media (max-width:768px){
+            .list-left li{
+                margin-bottom: -10px;
+            }
+            .list-left img{
+                width: 250px;
+                height: 160px;
+            }
+            .list-left a{
+                font-size: 18px;
+            }
+            .list-left p{
+                font-size: 14px;
+            }
+        }
+        @media (max-width:576px){
+            .list-left p{
+                display: none;
+            }
+            .list-left .inf{
+                width: 250px;
+            }
+            .list-left img{
+                width: 150px;
+                height: 120px;
+            }
+            .list-left a{
+                font-size: 16px;
+            }
+            .list-left li{
+                margin-bottom: -50px;
+            }
+        }
+    @media (max-width:991px) {
+        .col-md-5{
+            order: 2;
+        }
+        .col-md-7{
+            order: 1;
+        }
+        .c{
+            display: none;
+        }
+        .section2-menu ul{
+            display: none;
+        }
+        .section2-news-left{
+        height: 400px;
+        }
+        .section2-news{
+            height: 1100px;
+        }
+        .section2-news-right{
+            margin-top: 70px;
+        }
+    }
+    .danhsach{
+        height: 1600px;
+    }
+    .section3{
+            border-top: 2px solid grey;
+            margin-top: 30px;
+            padding: 0;
+        }
+        .tuan{
+            margin-top: 20px;
+        }
+        .section3 h3{
+            font-size: 22px;
+        }
+        .section3 h3::before{
+        content: '';
+        display: inline-block;
+        width: 4px;
+        height: 16px;
+        margin-right: 5px;
+        transform: skew(-20deg);
+        background-color: #dd3333;
+    }
+        .section3 ul{
+            padding: 0;
+        }
+        .section3 li{
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        .section3 a{
+            display: block;
+            text-decoration: none;
+            color: #333;
+        }
+        .section3 li:nth-child(2),li:nth-child(3){
+            display: flex;
+        }
+        .section3 .item10{
+            height: 250px;
+        }
+        .section3 .item10 img{
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            /* margin-bottom: 5px; */
+        }
+        .section3 .item20{
+            height: 100px;
+            border-top: 1px solid lightgray;
+            overflow: hidden;
+            /* margin-top: 10px; */
+        }
+        .section3 .item20 a{
+            display: block;
+            font-size: 14px;
+            padding-left: 5px;
+            padding-top: 20px;
+        }
+        .section3 .item20 img{
+            width: 120px;
+            height: 90px;
+            padding-top: 20px;
+        }
+
+        @media (max-width:768px) {
+            .danhsach{
+                height: 1500px;
+            }
+            .section3{
+                padding: 0 12px;
+            }
+        }
+        @media (max-width:576px) {
+            .danhsach{
+                height: 1200px;
+            }
+            .section3{
+                padding: 0 24px;
+            }
+        }
+        .section-title{
+            width: 100%;
+            height: 45px;
+            background: lavender;
+            padding-left: 55px;
+            padding-top: 20px;
+        }
+        .section-title h4{
+            font-size: 24px;
+        }
+        .section-title h4::before{
+        content: '';
+        display: inline-block;
+        width: 4px;
+        height: 16px;
+        margin-right: 5px;
+        transform: skew(-20deg);
+        background-color: #dd3333;
+    }
+        .section-magazine{
+            padding: 25px 50px 20px 50px;
+            background: lavender;
+            margin: 0;
+            width: 100%;
+        }
+        .item-magazine{
+            position: relative;
+            width: 300px;
+            height: 450px;
+            overflow: hidden;
+            margin-right: 20px
+        }
+        .item-magazine img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: 2.5s;
+        }
+        .item-magazine:hover img{
+            transform: scale(1.2);
+        }
+        .item-magazine .foggy{
+            width: 100%;
+            height: 100%;
+            background: black;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.4;
+            z-index: 1;
+        }
+        .item-magazine .kyhieu{
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 100px;
+            height: 25px;
+            border-radius: 0 0 5px 5px;
+            background: #ffde76;
+            z-index: 2;
+            transform: translateX(-50%);
+        }
+        .item-magazine span{
+            display: block;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .item-magazine .title span{
+            position: absolute;
+            top:250px;
+            left: 50%;
+            z-index: 2;
+            color: white;
+            transform: translateX(-50%);
+            text-align: center;
+            font-weight: 700;
+            font-size: 20px;
+            width: 220px;
+            height: 150px;
+            
+        }
+        .title span::before{
+            content: "";
+            width: 60px;
+            height: 5px;
+            background: #ffde76;
+            position: absolute;
+            z-index: 2;
+            left: 50%;
+            transform: translateX(-50%);
+            top:-15%
+        }
+        .item-magazine:hover .title span{
+            color: #ffde76;
+        }
+        .item-magazine .type-icon{
+            position: absolute;
+            top:350px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            color: white;
+            z-index: 2;
+            background: rgb(20, 20, 20);
+            text-align: center;
+        }
+        .item-magazine:hover .type-icon{
+            background-color: #ffde76;
+        }
+        .item-magazine .type-icon i{
+            margin-top: 15px;
+        }
+        .item-magazine:hover i{
+            color:black
+        }
+        .arrow1{
+            border: 1px solid grey;
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%; 
+            position: absolute;
+            top:40%;
+            z-index: 1;
+            text-align: center;
+            line-height: 40px;
+            font-size: 18px;
+        }
+        .priv_arrow1{
+            left: 2%;
+        }
+        .priv_next1{
+            right: 3.5%;
+        }
+            .footer1{
+                width: 100%;
+                height: 180px;
+                background: lavender;
+                position: absolute;
+                left: 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                padding: 0 50px 10px 50px;
+            }
+            .footer1 p{
+                font-size: 12px;
+                margin-bottom: 6px;
+            }
+            @media (max-width:991px){
+                .footer1{
+                    flex-direction: column;
+                    text-align: center;
+                    height: 235px;
+                    align-items: center;
+                }
+            }
+</style>
+<body>
+    <div class="header">
+        <div class="header-menu">
+            <div class="header-logo"><img src="data:image/png;base64,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"></div>
+            <ul class="nav">
+                <li><a href="">Xuất bản</a></li>
+                <li><a href="">Thời sự</a></li>
+                <li><a href="">Thế giới</a></li>
+                <li><a href="">Kinh doanh</a></li>
+                <li><a href="">Công nghệ</a></li>
+                <li><a href="">Sức khỏe</a></li>
+                <li><a href="">Thể thao</a></li>
+                <li><a href="">Giải trí</a></li>
+                <li><a href="">Đời sống</a></li>
+                <li><a href="">Du lịch</a></li>
+                <li><a href="">Lifestyle</a></li>
+            </ul>
+            <div class="toggle"></div>
+            <div class="header-icon">
+                <div class="icon-find">
+                    <input type="text-find" class="text" placeholder="Nhập nội dung cần tìm...">
+                    <i class="fa fa-search search"></i>
+                </div>
+                <div class="icon-user"><i class="fa fa-user"></i></div>
+            </div>
+        </div>
+    </div> 
+    <div class="menu-list">
+        <div class="row1">
+            <ul class="list-item">
+                <h4>Thời sự</h4>
+                <li><a href="">Đô thị</a></li>
+                <li><a href="">Giao thông</a></li>
+            </ul>
+            <ul class="list-item">
+                <h4>Thế giới</h4>
+                <li><a href="">Tư liệu</a></li>
+                <li><a href="">Phân tích</a></li>
+                <li><a href="">Người Việt 4 phương</a></li>
+                <li><a href="">Tầm  nhìn</a></li>
+            </ul>
+            <ul class="list-item">
+                <h4>Kinh doanh</h4>
+                <li><a href="">Bất động sản</a></li>
+                <li><a href="">Tiền của tôi</a></li>
+                <li><a href="">Tiêu dùng</a></li>
+                <li><a href="">Kinh tế số</a></li>
+                <li><a href="">Thông tin doanh nghiệp</a></li>
+            </ul>
+            <ul class="list-item">
+                <h4>Công nghệ</h4>
+                <li><a href="">Blockchain</a></li>
+                <li><a href="">Mobile</a></li>
+                <li><a href="">Gadget</a></li>
+                <li><a href="">Internet</a></li>
+            </ul>
+            <ul class="list-item">
+                <h4>Xuất bản</h4>
+                <li><a href="">Tin xuất bản</a></li>
+                <li><a href="">Sách hay</a></li>
+                <li><a href="">Tác giả</a></li>
+            </ul>
+        </div>
+        <div class="row1">
+            <ul class="list-item">
+                <h4>Đời sống</h4>
+                <li><a href="">Giới trẻ</a></li>
+                <li><a href="">Xu hướng</a></li>
+                <li><a href="">Sống đẹp</a></li>
+                <li><a href="">Gender</a></li>
+                <li><a href="">Sự kiện</a></li>
+                <li><a href="">Dấu ấn bản lĩnh</a></li>
+            </ul>
+            <ul class="list-item">
+                <h4>Sức khỏe</h4>
+                <li><a href="">Hậu Covid-19</a></li>
+                <li><a href="">Khỏe đẹp</a></li>
+                <li><a href="">Dinh dưỡng</a></li>
+                <li><a href="">Mẹ và bé</a></li>
+                <li><a href="">Bệnh thường gặp</a></li>
+                <li><a href="">Thừa cân ở trẻ</a></li>
+            </ul>
+            <ul class="list-item">
+                <h4>Thể thao</h4>
+                <li><a href="">Bóng đá Việt Nam</a></li>
+                <li><a href="">Bóng đá Anh</a></li>
+                <li><a href="">Võ thuật </a></li>
+                <li><a href="">eSport</a></li>
+            </ul>
+            <ul class="list-item">
+                <h4>Giải trí</h4>
+                <li><a href="">Sao </a></li>
+                <li><a href="">Âm nhạc</a></li>
+                <li><a href="">Phim ảnh</a></li>
+                <li><a href="">Thời trang</a></li>
+            </ul>
+            <ul class="list-item">
+                <h4>Xe</h4>
+                <li><a href="">Ô-tô</a></li>
+                <li><a href="">EV</a></li>
+                <li><a href="">Du thuyền</a></li>
+                <li><a href="">Xe máy</a></li>
+            </ul>
+        </div>
+        <div class="row1">
+            <ul class="list-item">
+                <h4>Du lịch</h4>
+                <li><a href="">Địa điểm du lịch </a></li>
+                <li><a href="">Kinh nghiệm du lịch</a></li>
+                <li><a href="">Ẩm thực</a></li>
+            </ul>
+            <ul class="list-item">
+                <h4>Giáo dục</h4>
+                <li><a href="">Tuyển sinh</a></li>
+                <li><a href="">Du học</a></li>
+            </ul>
+            <ul class="list-item">
+                <h4>Lifestyle</h4>
+                <li><a href="">Trend</a></li>
+                <li><a href="">Money</a></li>
+                <li><a href="">Work</a></li>
+                <li><a href="">Love và sex</a></li>
+                <li><a href="">Living</a></li>
+            </ul>
+            <ul class="list-item">
+                <h4>Pháp luật</h4>
+                <li><a href="">Pháp đình</a></li>
+                <li><a href="">Vụ án</a></li>
+            </ul>
+            <ul class="list-item">
+                <!-- <h4>DoanAnhTuan</h4>
+                <li><a href="">Tin xuất bản</a></li>
+                <li><a href="">Sách hay</a></li>
+                <li><a href="">Tác giả</a></li> -->
+            </ul>
+        </div>
+    </div>
+    <div class="container sec1 menu-list-item">
+        <div class="row one">
+            <div class="col-lg-4 col-md-5 col1">
+                <ul class="a">
+                    <li>
+                        <img src="https://znews-photo.zingcdn.me/w210/Uploaded/ohunuai/2022_05_18/281855038_2864009287077768_7337565265191504501_n_1.jpg">
+                        <a class="col1-a" href="">Dàn diễn viên hài dự lễ cưới Anh Tú</a>
+                    </li>
+                    <li>
+                        <img src="https://znews-photo.zingcdn.me/w210/Uploaded/lce_mdlwc/2022_05_17/281729991_1990886511094851_6230403135385041918_n.jpg">
+                        <a class="col1-a" href="">Tìm thấy thi thể bé 6 tuổi bị cha ôm nhảy xuống sông Thu Bồn</a></li>
+                    <li>
+                        <img src="https://znews-photo.zingcdn.me/w210/Uploaded/yrfjpyvslyr/2022_05_18/futsal_vn.jpg">
+                        <a class="col1-a" href="">Tuyển futsal Việt Nam cần hòa Thái Lan để giành HCV SEA Games</a>
+                    </li>
+                    <li>
+                        <img src="https://znews-photo.zingcdn.me/w210/Uploaded/zugttw/2022_05_18/14090CBB_B56C_4A74_873A_399CCDC690A9.jpeg">
+                        <a class="col1-a" href="">Việc cấm kỵ với đàn ông sau khi quan hệ tình dục</a>
+                    </li>
+                    <li>
+                        <img src="https://znews-photo.zingcdn.me/w210/Uploaded/pgi_ubnatyvau/2022_05_18/a_16528796894911630606098_1.jpeg">
+                        <a class="col1-a" href="">Công an TP.HCM kết luận vụ hoa hậu Lã Kỳ Anh trộm đồng hồ Rolex</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-5 col-md-7 col2">
+                <div class="b">
+                    <img src="https://znews-photo.zingcdn.me/w960/Uploaded/rohuoct/2022_04_01/TASS_51684447.jpg">
+                    <h1>Liệu kinh tế Nga đã thực sự hồi phục?</h1>
+                    <p>Kinh tế Nga có một số tín hiệu tích cực trên lĩnh vực tiền tệ và thị trường hàng hóa. Tuy nhiên, Nga vẫn phải vật lộn với tình trạng thiếu hụt nguyên vật liệu nhập khẩu.</p>
+                    <ul>
+                         <li><a href="">Blockchain tại Việt Nam đến lúc 'làm thật, ăn thật'</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-0 col3">
+                <ul class="c">
+                    <li>
+                        <img src="https://znews-photo.zingcdn.me/w960/Uploaded/xpivvpib/2022_05_18/Podcast_thumbnail_1_.jpg" class="col3-img">
+                        <a href="">Minh Nghi: 'Mặc áo dài tại eSports là bước ngoặt cuộc đời'</a>
+                    </li>
+                    <li>
+                        <img src="https://znews-photo.zingcdn.me/w480/Uploaded/neg_yrznslt/2022_05_18/anh_thumb.jpg" class="col3-img">
+                        <a href="">HLV tuyển nữ Myanmar: 'Việt Nam mạnh hơn Thái Lan'</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container section2">
+        <div class="section2-menu">
+            <h3>MULTIMEDIA</h3>
+            <ul>
+                 <li><a href="">VIDEO</a></li>
+                 <li><a href="">PODCAST</a></li>
+                 <li><a href="">LONGFORM</a></li>
+                 <li><a href="">STORY</a></li>
+                 <li><a href="">QUIZZ</a></li>
+             </ul>
+        </div>
+        <div class="row section2-news">
+            <div class="col-lg-6 col-md-12 section2-news-left">
+                <img src="https://znews-photo.zingcdn.me/w660/Uploaded/yrfjpyvslyr/2022_05_05/honda_1.jpg">
+                <h3>HLV Honda biểu diễn kỹ thuật trước học trò</h3>
+                <p>Huấn luyện viên Keisuke Honda, thuyền trưởng U23 Campuchia, vẫn giữ được những phẩm chất kỹ thuật dù ông đã nghỉ thi đấu.</p>
+            </div>
+            <div class="col-lg-6 col-md-12 section2-news-right">
+                <div class="e">
+                    <div class="container news-right">
+                        <div class="row small">
+                            <div class="col-6 q">
+                                <img src="https://znews-photo.zingcdn.me/w360/Uploaded/opluoaa/2022_05_05/279496022_770705624339018_1256713356735123511_n_1.jpg" class="anhtren">
+                                <h3>G-Dragon và dàn sao Hollywood dự show thời trang ở Monaco</h3>
+                            </div>
+                            <div class="col-6 w">
+                                <img src="https://znews-photo.zingcdn.me/w360/Uploaded/gtntnn/2022_05_05/2022_05_04T171139Z_638934573_RC2G0U9CKQWG_RTRMADP_3_WW2_ANNIVERSARY_RUSSIA_PARADE_REHEARSAL.JPG" class="anhtren">
+                                <h3>Đoàn xe tăng, chiến đấu cơ Nga diễn tập cho diễu binh Ngày Chiến thắng</h3>
+                            </div>
+                            <div class="col-6 t">
+                                <img src="https://znews-photo.zingcdn.me/w360/Uploaded/uivpyciv/2022_04_27/ava2023_Kia_Soul_7.jpg" class="anhtren">
+                                <h3>G-Dragon và dàn sao Hollywood dự show thời trang ở Monaco</h3>
+                            </div>
+                            <div class="col-6 r">
+                                <img src="https://znews-photo.zingcdn.me/w360/Uploaded/kbd_ivdb/2022_05_05/z3392138560613_b0af02617f141783b1713e6b22d1c8e0.jpg" class="anhtren">
+                                <h3>Hiện trường ôtô 7 chỗ tông hàng loạt xe máy ở TP Thủ Đức</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </div>
+    <div class="slider">
+        <div class="item">
+            <img src="https://znews-photo.zingcdn.me/w210/Uploaded/bpcpwiq2/2022_01_10/07_01_Moominvalley_SO1_e1555522053551.jpg">
+            <p>Câu chuyện về những đứa trẻ khác biệt trong bộ truyện Mumi</p>
+        </div>
+        <div class="item">
+            <img src="https://znews-photo.zingcdn.me/w210/Uploaded/mzjyy/2022_05_11/diana.jpg">
+            <p>Mức tiêu thụ sách tăng ở nhiều quốc gia</p>
+        </div>
+        <div class="item">
+            <img src="https://znews-photo.zingcdn.me/w210/Uploaded/mzjyy/2022_05_12/AI_in_edu.jpg">
+            <p>Những nơi đang dùng giáo viên trí thông minh nhân tạo trong dạy học</p>
+        </div>
+        <div class="item">
+            <img src="https://znews-photo.zingcdn.me/w210/Uploaded/mzjyy/2022_05_12/TNA.jpg">
+            <p>Trương Ngọc Ánh, Sĩ Hoàng tham gia 'thắp lửa tri thức'</p>
+        </div>
+        <div class="item">
+            <img src="https://znews-photo.zingcdn.me/w210/Uploaded/mzjyy/2022_05_12/inspire_page_ipa.jpg">
+            <p>Cháy quán ăn ở TP.HCM, nhiều người tháo chạy</p>
+        </div>
+        <div class="item">
+            <img src="https://znews-photo.zingcdn.me/w210/Uploaded/mzjyy/2022_05_15/280646911_10160121956072495_5191254922200861327_n_2_.jpg">
+            <p>Những họa sĩ vẽ bìa sách độc đáo</p>
+        </div>
+        <div class="item">
+            <img src="https://znews-photo.zingcdn.me/w210/Uploaded/bpcpwiq2/2022_01_10/thumb_tu_sach.jpg">
+            <p>Khai trương phòng trưng bày sách về Chủ tịch Hồ Chí Minh</p>
+        </div>
+        <div class="item">
+            <img src="https://znews-photo.zingcdn.me/w210/Uploaded/mzjyy/2022_02_26/IMG_6120_2_.JPG">
+            <p>Các không gian lưu trữ văn học trên thế giới</p>
+        </div>
+        <div class="item">
+            <img src="https://znews-photo.zingcdn.me/w210/Uploaded/bpcpwiq2/2022_01_10/07_01_Moominvalley_SO1_e1555522053551.jpg">
+            <p>Cầu thủ Man United chào đón Ten Hag</p>
+        </div>
+        <div class="item">
+            <img src="https://znews-photo.zingcdn.me/w210/Uploaded/bpcpwiq2/2022_01_10/07_01_Moominvalley_SO1_e1555522053551.jpg">
+            <p>Rủ con trai sát hại chồng cũ, hai mẹ con phải ngồi tù</p>
+        </div>
+    </div>
+    <div class="container danhsach">
+        <div class="row">
+            <div class="col-9 list-left">
+                <ul class="khoi">
+                    <li>
+                        <img src="https://znews-photo.zingcdn.me/w360/Uploaded/tmuizn/2022_05_22/Azovstal_11_5_reuters.JPG">
+                        <div class="inf">
+                            <a href="">6 binh sĩ Ukraine thiệt mạng ở Azovstal khi cố cho nổ kho đạn</a>
+                            <p>Sáu binh sĩ Ukraine thiệt mạng tại khu vực nhà máy Azovstal ở Mariupol khi cố cho nổ kho đạn trước khi đầu hàng, theo lãnh đạo “Cộng hòa Nhân dân Donetsk” tự xưng Denis Pushilin.</p>
+                        </div>    
+                    </li>
+                    <li>
+                        <img src="https://znews-photo.zingcdn.me/w360/Uploaded/aopuoax/2022_05_22/bui_tien_dung_1.jpg">
+                        <div class="inf">
+                            <a href="">Thủ môn Bùi Tiến Dũng lấy vợ</a>
+                            <p>Những cầu thủ thân thiết như Đoàn Văn Hậu, Nguyễn Quang Hải đến chúc mừng Bùi Tiến Dũng.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="https://znews-photo.zingcdn.me/w360/Uploaded/lce_qjlcv/2022_05_22/xe_cuu_thuong.jpeg">
+                        <div class="inf">
+                            <a href="">Công an TP.HCM làm việc với nhóm 'mở đường cho xe cứu thương'</a>
+                            <p>Mạng xã hội lan truyền hình ảnh về nhóm thanh niên “Hỗ trợ cấp cứu" mặc đồng phục, sử dụng xe máy phát tín hiệu ưu tiên, lưu thông thành đoàn để "mở đường" cho xe cứu thương.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="https://znews-photo.zingcdn.me/w360/Uploaded/bzwvopcg/2022_05_22/58082185_0_Couple_goals_Last_sum_1.jpg">
+                        <div class="inf">
+                            <a href="">Người đàn ông quyến rũ nhất thế giới chỉnh váy cho vợ ở Cannes</a>
+                            <p>Tài tử Idris Elba gây ấn tượng đẹp với công chúng khi chỉnh váy cho vợ tại buổi ra mắt phim "Three Thousand Years of Longing".</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="https://znews-photo.zingcdn.me/w360/Uploaded/mfnuy/2022_05_22/zzz_2.jpg">
+                        <div class="inf">
+                            <a href="">Lý do Mbappe lật kèo với Real</a>
+                            <p>Kylian Mbappe khiến tất cả "việt vị" khi quyết định gia hạn hợp đồng với PSG thay vì chọn gia nhập Real Madrid như ý định ban đầu.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="https://znews-photo.zingcdn.me/w360/Uploaded/kbd_pilk/2022_05_22/tinngan_040106_257715423_0.jpg">
+                        <div class="inf">
+                            <a href="">Địch Lệ Nhiệt Ba, Vương Nhất Bác lại bị chê cười</a>
+                            <p>Địch Lệ Nhiệt Ba bị chê cười vì nhận giải thưởng không đúng với thực lực. Mỗi khi Kim Ưng tổ chức, cô lại bị bêu xấu.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="https://znews-photo.zingcdn.me/w360/Uploaded/dqvpxpck/2022_05_22/thumb_ss_AB125_Copy.jpg">
+                        <div class="inf">
+                            <a href="">Honda Air Blade 125 mới có gì để cạnh tranh với Yamaha FreeGo?</a>
+                            <p>Thay vì dùng giá bán để cạnh tranh, Air Blade thế hệ mới có những nâng cấp về trang bị và thiết kế nhằm gây sức ép lên FreeGo.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="https://znews-photo.zingcdn.me/w360/Uploaded/rohuoct/2022_05_22/c71b682f91897bb03bb8ab1755aa783ffcbb4941.jpg">
+                        <div class="inf">
+                            <a href="">Christine Lagarde: 'Tiền mã hóa không có giá trị'</a>
+                            <p>Chủ tịch Ngân hàng Trung ương châu Âu (ECB) Christine Lagarde cho rằng tiền mã hóa không dựa trên bất cứ điều gì và cần có quy định để tránh tình trạng đầu cơ.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-3 list-right">
+                <div class="khoi">
+                    <div class="inf-seagame">
+                        <div class="hinhanh">
+                            <img src="https://vcdn-vnexpress.vnecdn.net/2019/12/12/viet-nam-thanh-cong-nhu-the-nao-o-sea-games-30-1576141123_750x450.jpg">
+                        </div>
+                        <h3>Thể thao Việt Nam thành công như thế nào ở SEA Games 30</h3>
+                    </div>
+                    <div class="inf-seagame">
+                        <div class="hinhanh">
+                            <img src="https://sport5.mediacdn.vn/thumb_w/700/158855217956261888/2022/5/21/d8aceaa062eaa2b4fbfb-16531420233351841413846.jpg">
+                        </div>
+                        <h3>Hình ảnh nhận Huy chương Vàng đầy xúc động của đội tuyển nữ Việt Nam</h3>
+                    </div>
+                    <div class="inf-seagame">
+                        <div class="hinhanh">
+                            <img src="https://icdn.dantri.com.vn/thumb_w/640/2019/12/07/nhan-sac-xinh-dep-cua-hot-girl-san-co-dt-viet-namdocx-1575688183345.png">
+                        </div>
+                        <h3>Trò chuyện "chớp nhoáng" với hot girl đội tuyển bóng đá nữ Việt Nam</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container section3">
+        <div class="row tuan">
+            <div class="col-md-6 col-lg-3 listSec3">
+                <h3>XUẤT BẢN</h3>
+                <ul>
+                    <li class="item10">
+                        <img src="https://znews-photo.zingcdn.me/w360/Uploaded/dqmblcvo/2022_05_21/Thumb.jpg">
+                        <a href="">Những điều chưa biết về vị thần được thờ ở đền Quán Thánh</a>
+                    </li>
+                    <li class="item20">
+                        <img src="https://znews-photo.zingcdn.me/w210/Uploaded/oplukaa/2020_05_19/Thumb.jpg">
+                        <a href="">PGS.TS Nguyễn Thế Kỷ viết hai tác phẩm về Bác Hồ</a>
+                    </li>
+                    <li class="item20">
+                        <img src="https://znews-photo.zingcdn.me/w210/Uploaded/mzjyy/2022_05_19/thumb_cuoc_thi.jpg">
+                        <a href="">Phát động cuộc thi giới thiệu sách về Bác Hồ</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-lg-3 listSec3">
+                <h3>SÁCH HAY</h3>
+                <ul>
+                    <li class="item10">
+                        <img src="https://znews-photo.zingcdn.me/w360/Uploaded/dqmblcvo/2022_05_21/student.jpg">
+                        <a href="">Giải quyết tình trạng 'quá nhiều việc phải làm'</a>
+                    </li>
+                    <li class="item20">
+                        <img src="https://znews-photo.zingcdn.me/w210/Uploaded/dqmblcvo/2022_05_21/Luka_Modric.jpg">
+                        <a href="">Vai trò của Mourinho trong việc đưa Luka Modric về Real Madrid</a>
+                    </li>
+                    <li class="item20">
+                        <img src="https://znews-photo.zingcdn.me/w210/Uploaded/dqmblcvo/2021_09_11/1200x0.jpg">
+                        <a href="">Người đàn ông bị teo chân trở thành vận động viên</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-lg-3 listSec3">
+                <h3>TÁC GIẢ</h3>
+                <ul>
+                    <li class="item10">
+                        <img src="https://znews-photo.zingcdn.me/w360/Uploaded/mzjyy/2022_05_21/280131170_1420192438436335_154559863608346060_n_2_.jpg">
+                        <a href="">Việt Nam qua góc nhìn của thi sĩ Mỹ</a>
+                    </li>
+                    <li class="item20">
+                        <img src="https://znews-photo.zingcdn.me/w210/Uploaded/mzjyy/2022_05_17/tuong_Andersen_2_.jpg">
+                        <a href="">Không gian cổ tích của Andersen</a>
+                    </li>
+                    <li class="item20">
+                        <img src="https://znews-photo.zingcdn.me/w210/Uploaded/mzjyy/2022_05_15/280646911_10160121956072495_5191254922200861327_n_2_.jpg">
+                        <a href=""> Những họa sĩ vẽ bìa sách độc đáo</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-lg-3 listSec3">
+                <h3>THỜI SỰ</h3>
+                <ul>
+                    <li class="item10">
+                        <img src="https://znews-photo.zingcdn.me/w360/Uploaded/yfsgs/2022_05_23/Untitled5.jpg">
+                        <a href="">Xe cứu thương kẹt giữa biển người trước sân Mỹ Đình</a>
+                    </li>
+                    <li class="item20">
+                        <img src="https://znews-photo.zingcdn.me/w210/Uploaded/nugzrd/2022_05_22/IMG_20220522_214913.jpg">
+                        <a href="">Hàng nghìn người Nha Trang đổ ra quảng trường mừng chiến thắng</a>
+                    </li>
+                    <li class="item20">
+                        <img src="https://znews-photo.zingcdn.me/w210/Uploaded/uohusah/2022_05_18/muong_tay.jpg">
+                        <a href="">Ăn hạt muồng tây chữa bệnh, hai vợ chồng bị ngộ độc, liệt toàn thân</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container section3">
+        <div class="row tuan">
+            <div class="col-md-6 col-lg-3 listSec3">
+                <h3>KINH DOANH</h3>
+                <ul>
+                    <li class="item10">
+                        <img src="https://znews-photo.zingcdn.me/w360/Uploaded/mzdqa/2022_05_13/ck_m5_10_1.jpg">
+                        <a href="">Chứng khoán rơi 22 điểm phiên đầu tuần</a>
+                    </li>
+                    <li class="item20">
+                        <img src="https://znews-photo.zingcdn.me/w210/Uploaded/asfzyreslz2/2022_05_23/download_1__1.jpg">
+                        <a href="">Thế giới mất 112 triệu việc làm trong quý I</a>
+                    </li>
+                    <li class="item20">
+                        <img src="https://znews-photo.zingcdn.me/w210/Uploaded/bfjysesfzyr/2022_05_23/nongsan_9_.jpg">
+                        <a href="">Hơn 1.600 câu hỏi của nông dân gửi Thủ tướng tại đối thoại lần 4</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-lg-3 listSec3">
+                <h3>CÔNG NGHỆ</h3>
+                <ul>
+                    <li class="item10">
+                        <img src="https://znews-photo.zingcdn.me/w360/Uploaded/ygtmvd/2022_05_22/cz_khong_nghi_rang_ke_hoach_hoi_sinh_luna_cua_do_kwon_se_thanh_cong9.jpg">
+                        <a href="">CEO Binance giải thích lý do vẫn niêm yết LUNA'</a>
+                    </li>
+                    <li class="item20">
+                        <img src="https://znews-photo.zingcdn.me/w210/Uploaded/yqdlcqrwq/2022_05_21/13821052022.jpg">
+                        <a href="">Những bằng sáng chế kỳ lạ của Apple</a>
+                    </li>
+                    <li class="item20">
+                        <img src="https://znews-photo.zingcdn.me/w210/Uploaded/spivovxi/2022_05_23/luannsdg.jpg">
+                        <a href="">Do Kwon kêu gọi người dùng ngừng đốt LUNA</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-lg-3 listSec3">
+                <h3>XE</h3>
+                <ul>
+                    <li class="item10">
+                        <img src="https://znews-photo.zingcdn.me/w360/Uploaded/dqvpxpck/2022_03_21/thumb_VinFast_Vento.jpg">
+                        <a href="">Những lựa chọn xe cùng tầm giá Honda Air Blade 160</a>
+                    </li>
+                    <li class="item20">
+                        <img src="https://znews-photo.zingcdn.me/w210/Uploaded/neg_estpyge/2022_05_23/Ertiga_1.jpg">
+                        <a href="">Suzuki Ertiga bản Hybrid 2022 lộ diện trước ngày ra mắt</a>
+                    </li>
+                    <li class="item20">
+                        <img src="https://znews-photo.zingcdn.me/w210/Uploaded/ebhuiwh/2022_05_23/thumb_488_Pista_Spider.jpg">
+                        <a href=""> Chi tiết Ferrari 488 Pista Spider của ông Đặng Lê Nguyên Vũ</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-lg-3 listSec3">
+                <h3>SỨC KHỎE</h3>
+                <ul>
+                    <li class="item10">
+                        <img src="https://znews-photo.zingcdn.me/w360/Uploaded/hointt/2022_05_21/de0Huyet_ap_cua_van_dong_vien_14080_co_duoc_xem_la_cao.jpg">
+                        <a href="">Bí quyết để vận động viên điền kinh có đôi chân khỏe</a>
+                    </li>
+                    <li class="item20">
+                        <img src="https://znews-photo.zingcdn.me/w210/Uploaded/aobfsat/2022_05_22/quan_he_tinh_duc.jpeg">
+                        <a href="">Ngại quan hệ tình dục vì xuất tinh sớm</a>
+                    </li>
+                    <li class="item20">
+                        <img src="https://znews-photo.zingcdn.me/w210/Uploaded/znanug/2022_05_23/mir73_jeanna_giese_frassetto_cluba_hdv_0.jpeg">
+                        <a href="">Người đầu tiên sống sót khỏi loại virus gây tử vong 100%</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="section-title"><h4>MEGAZINE</h4></div>
+    <div class="slider1 section-magazine">
+        <div class="item-magazine">
+            <div class="foggy"></div>
+            <div class="kyhieu"><span>TK;DR</span></div>
+            <img src="https://znews-photo.zingcdn.me/860/Uploaded/natmzz/2022_05_20/anh1_1_1.jpg">
+            <div class="title">
+                <span>Lý do khiến U23 Việt Nam nhọc nhằn vào chung kết SEA Games</span>
+            </div>
+            <div class="type-icon">
+                <i class="fa-solid fa-computer-mouse"></i>
+            </div>
+        </div>
+        <div class="item-magazine">
+            <div class="foggy"></div>
+            <div class="kyhieu"><span>TK;DR</span></div>
+            <img src="https://znews-photo.zingcdn.me/860/Uploaded/ryksdreyxq/2022_04_27/15_1.jpg">
+            <div class="title">
+                <span>Chuyện bị đuổi khỏi máy bay vì trang phục phản cảm</span>
+            </div>
+            <div class="type-icon">
+                <i class="fa-solid fa-computer-mouse"></i>
+            </div>
+        </div>
+        <div class="item-magazine">
+            <div class="foggy"></div>
+            <div class="kyhieu"><span>TK;DR</span></div>
+            <img src="https://znews-photo.zingcdn.me/860/Uploaded/gtntnn/2022_04_28/merlin_206001618_323682ec_96ad_46e4_b7b5_3a94c14e8b19_superJumbo_1_.jpg">
+            <div class="title">
+                <span>Trận 'hồng thủy' nhân tạo của người Ukraine để chặn Nga vào Kyiv'</span>
+            </div>
+            <div class="type-icon">
+                <i class="fa-solid fa-computer-mouse"></i>
+            </div>
+        </div>
+        <div class="item-magazine">
+            <div class="foggy"></div>
+            <div class="kyhieu"><span>TK;DR</span></div>
+            <img src="https://znews-photo.zingcdn.me/860/Uploaded/orhwao_obvbhj3/2022_01_10/Thumb.jpg">
+            <div class="title">
+                <span>Chọc hút trứng cho F0 hiếm muộn</span>
+            </div>
+            <div class="type-icon">
+                <i class="fa-solid fa-computer-mouse"></i>
+            </div>
+        </div>
+        <div class="item-magazine">
+            <div class="foggy"></div>
+            <div class="kyhieu"><span>TK;DR</span></div>
+            <img src="https://znews-photo.zingcdn.me/860/Uploaded/bpcbzivo/2022_04_27/longform_thumb.jpg">
+            <div class="title">
+                <span>Những nguy hiểm về lầm tưởng bụ bẫm và thừa cân</span>
+            </div>
+            <div class="type-icon">
+                <i class="fa-solid fa-computer-mouse"></i>
+            </div>
+        </div>
+        <div class="item-magazine">
+            <div class="foggy"></div>
+            <div class="kyhieu"><span>TK;DR</span></div>
+            <img src="https://znews-photo.zingcdn.me/860/Uploaded/wpdhnwhnw/2022_04_29/avason.jpg">
+            <div class="title">
+                <span>Sơn Tùng im lặng là dấu chấm hết cho sự nghiệp</span>
+            </div>
+            <div class="type-icon">
+                <i class="fa-solid fa-computer-mouse"></i>
+            </div>
+        </div>
+        <div class="item-magazine">
+            <div class="foggy"></div>
+            <div class="kyhieu"><span>TK;DR</span></div>
+            <img src="https://znews-photo.zingcdn.me/860/Uploaded/jaegtn/2022_05_05/ezgif.com_gif_maker_9_.jpg">
+            <div class="title">
+                <span>Nước cờ cao tay của tỷ phú Abrahamovich</span>
+            </div>
+            <div class="type-icon">
+                <i class="fa-solid fa-computer-mouse"></i>
+            </div>
+        </div>
+        <div class="item-magazine">
+            <div class="foggy"></div>
+            <div class="kyhieu"><span>TK;DR</span></div>
+            <img src="https://znews-photo.zingcdn.me/860/Uploaded/kbfoplb/2022_04_22/DSC_0715_copy_1.jpg">
+            <div class="title">
+                <span>Nữ võ sư chuyển giới</span>
+            </div>
+            <div class="type-icon">
+                <i class="fa-solid fa-computer-mouse"></i>
+            </div>
+        </div>
+    </div>
+    <div class="container section3">
+        <div class="row tuan">
+            <div class="col-md-6 col-lg-3 listSec3">
+                <h3>THỂ THAO</h3>
+                <ul>
+                    <li class="item10">
+                        <img src="https://znews-photo.zingcdn.me/w360/Uploaded/xpivvpib/2022_05_22/Podcast_thumbnail_3_.jpg">
+                        <a href="">Nhà vô địch đấu vật SEA Games mặc kệ ngoại hình</a>
+                    </li>
+                    <li class="item20">
+                        <img src="https://znews-photo.zingcdn.me/w210/Uploaded/cqjlqcqjx/2022_05_23/thumb.jpg">
+                        <a href="">'Vua bóng rổ' Philippines bị lật đổ</a>
+                    </li>
+                    <li class="item20">
+                        <img src="https://znews-photo.zingcdn.me/w210/Uploaded/cqjlqcqjx/2022_05_23/thumb2.jpg">
+                        <a href="">Cuồng nhiệt trong những trận bóng rổ cuối cùng của SEA Games</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-lg-3 listSec3">
+                <h3>GIẢI TRÍ</h3>
+                <ul>
+                    <li class="item10">
+                        <img src="https://znews-photo.zingcdn.me/w360/Uploaded/wpdhnwhnw/2022_05_23/tpppp_1.jpg">
+                        <a href="">Nicola Peltz và bạn gái Romeo Beckham khó thân</a>
+                    </li>
+                    <li class="item20">
+                        <img src="https://znews-photo.zingcdn.me/w210/Uploaded/ycgvppwi/2022_05_23/4916_baby_17_1610268127606.jpg">
+                        <a href="">Angelababy giải thể 4 công ty</a>
+                    </li>
+                    <li class="item20">
+                        <img src="https://znews-photo.zingcdn.me/w210/Uploaded/ohunuai/2022_05_23/ploan1_1.jpg">
+                        <a href="">Sức khỏe NSƯT Phượng Loan sau tai nạn chấn thương sọ não</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-lg-3 listSec3">
+                <h3>THỜI TRANG</h3>
+                <ul>
+                    <li class="item10">
+                        <img src="https://znews-photo.zingcdn.me/w360/Uploaded/ryksdreyxq/2022_05_23/6_chot_1.jpg">
+                        <a href="">Váy cưới xẻ cao của vợ Bùi Tiến Dũng</a>
+                    </li>
+                    <li class="item20">
+                        <img src="https://znews-photo.zingcdn.me/w210/Uploaded/pnbcuhbatgunb/2022_05_23/279723635_165410565876072_9006086695462189331_n_1.jpg">
+                        <a href="">Nữ diễn viên bị hãng áo tắm kiện</a>
+                    </li>
+                    <li class="item20">
+                        <img src="https://znews-photo.zingcdn.me/w210/Uploaded/ryksdreyxq/2022_05_23/143_1.jpg">
+                        <a href="">Chiếc váy bị chê của người mẫu quý tộc ở Cannes</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-lg-3 listSec3">
+                <h3>DU LỊCH</h3>
+                <ul>
+                    <li class="item10">
+                        <img src="https://znews-photo.zingcdn.me/w360/Uploaded/tmuitg/2022_05_23/3_nami_chwang.jpg">
+                        <a href="">6 tòa tháp tuyệt đẹp khắp thế giới</a>
+                    </li>
+                    <li class="item20">
+                        <img src="https://znews-photo.zingcdn.me/w210/Uploaded/pgi_dhnatxunv/2022_05_21/Anh0.jpg">
+                        <a href="">Chợ Thái Lan bán sầu riêng giá tới 345 USD/kg</a>
+                    </li>
+                    <li class="item20">
+                        <img src="https://znews-photo.zingcdn.me/w210/Uploaded/zcze/2022_05_23/Thumbnail_5.jpg">
+                        <a href="">Đội cận vệ Hoàng gia Đan Mạch hộ tống đàn vịt</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer1">
+            <div class="footer-left">
+                <span style="color:blue;font-size: 22px;font-weight: 600;">Z</span><span style="color:green;font-size: 22px;font-weight: 600">I</span><span style="color:Orange;font-size: 22px;font-weight: 600">N</span><span style="color:red;font-size: 22px;font-weight: 600">G</span><span style="font-size: 16px"> news</span>
+                <p>Tạp chí điện tử Tri thức trực tuyến</p>
+                <p>Cơ quan chủ quản: Hội Xuất bản Việt Nam</p>
+                <p>Giấy phép báo chí: số 75/GP-BTTTT do Bộ Thông tin và Truyền thông cấp ngày 26/02/2020</p>
+                <p>Phó tổng biên tập phụ trách: Lâm Quang Hiếu</p>
+                <p>© Toàn bộ bản quyền thuộc Tri thức trực tuyến</p>
+            </div>
+            <div class="footer-left">
+                <p>Tòa soạn: Tầng 7, D29 Phạm Văn Bạch, Quận Cầu Giấy, Hà Nội</p>
+                <p>Hotline: 0931.222.666 - Email: toasoan@zing.vn</p>
+                <p>Liên hệ | Tuyển dụng | Quảng cáo</p>
+            </div>
+        </div>
+</body>
+<script>
+    var toggle=document.querySelector(".toggle")
+    var listMenu=document.querySelector(".menu-list")
+    toggle.addEventListener("click",()=>{
+        toggle.classList.toggle("active")
+        listMenu.classList.toggle("addList")
+    })
+    var text=document.querySelector(".text")
+    var search=document.querySelector(".search")
+    search.addEventListener("click",()=>{
+        text.classList.toggle("addtext")
+    })
+</script>
